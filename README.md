@@ -37,7 +37,6 @@ The easiest way to get a feeling of the sharpening enhancement is throught the e
 In a terminal shell, navigate to your working folder and type
 
 - `python test_dms_correction.py` 
->for configuring and running TSEB over a time series of tabulated data
 
 The script will read all the Landsat images and compute the reference dynamic range that will be used to correct the sharpened S3 LST image. Then it will compare the corrected and uncorrected DMS image to a Landsat scene acquired on the same date and plot the results in [test/dms_corr_best_case](./test/dms_corr_best_case)
 
