@@ -1,0 +1,21 @@
+name:
+  dms-correction
+
+channels:
+  - conda-forge
+  - default
+ 
+dependencies:
+  - python=3.9
+  - numpy
+  - matplotlib
+  - scipy
+  - scikit-image
+  - gdal
+  - proj
+  - pyproj
+  - numba
+  - pip
+  - pip:
+    - git+https://github.com/radosuav/pyDMS
+    - git+https://github.com/hectornieto/model_evaluation
