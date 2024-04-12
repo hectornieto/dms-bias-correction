@@ -102,7 +102,8 @@ def rescale_lst(landsat_base_folder,
     """
     proj, hr_gt, xsize, ysize, extent, *_ = sl.gu.getRasterInfo(str(target_file))
     hr_res = hr_gt[1], hr_gt[5]
-    cv_dms, mean_dms, lr_gt = sl.local_variability(target_file, proj, extent)
+    cv_dms, mean_dms, lr_gt = sl.local_variability(target_file, proj, extent,
+                                                   window_size=window_size)
     cv_ref, days_offset = composite_reference_variability(
         landsat_base_folder, ref_date, target_file,  tiles,
         max_days_offset=max_days_offset, window_size=window_size)
