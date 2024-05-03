@@ -41,12 +41,13 @@ In a terminal shell, navigate to your working folder and type
 The script will read all the Landsat images and compute the reference dynamic range that will be used to correct the sharpened S3 LST image. Then it will compare the corrected and uncorrected DMS image to a Landsat scene acquired on the same date and plot the results in [test/dms_corr_best_case](./test/dms_corr_best_case)
 
 ### Low-level example
+See documentation in [dms_bias_correction.scale_lst.py](./dms_bias_correction/scale_lst.py) for details about using the low-level code
 
 ## Main Scientific References
 When using this sofware please cite the following refrences:
 
 - R. Guzinski, H. Nieto, R. Ramo-Sánchez, J.M. Sánchez, I. Joma, R. Zitouna-Chebbi, O. Roupsard, R. and López-Urrea, Improving field-scale crop actual evapotranspiration monitoring with Sentinel-3, Sentinel-2, and Landsat data fusion (2023) International Journal of Applied Earth Observation and Geoinformation", volume 125, art. No. 103587, doi :10.1016/j.jag.2023.103587
-- J. M. Sánchez, J. M. Galve, H. Nieto and R. Guzinski, Assessment of High-Resolution LST Derived From the Synergy of Sentinel-2 and Sentinel-3 in Agricultural Areas, (2034) IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 17, pp. 916-928, 2024, doi: 10.1109/JSTARS.2023.3335896.
+- J. M. Sánchez, J. M. Galve, H. Nieto and R. Guzinski, Assessment of High-Resolution LST Derived From the Synergy of Sentinel-2 and Sentinel-3 in Agricultural Areas, (2024) IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 17, pp. 916-928, 2024, doi: 10.1109/JSTARS.2023.3335896.
 
 
 ## Tests
