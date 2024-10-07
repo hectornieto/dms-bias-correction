@@ -149,20 +149,21 @@ def cv_landsat_collection_2(input_image,
         Coefficient of Variation composite
     """
 
-    proj, gt, xsize, ysize, extent, _ = sl.gu.getRasterInfo(str(image_template))
+    proj_ref, _, _, _, extent_ref, _ = sl.gu.getRasterInfo(str(image_template))
     # Transform UINT16 to Kelvin
     mult, add = landsat_temp_factors(input_image)
     raster = sl.raster_data(str(input_image / f"{input_image.stem}_QA_PIXEL.TIF"))
     valid = reclassify_espamask(raster, buffer_clouds=1, buffer_shadow=0)
     sensor = input_image.stem[:4]
     raster = input_image / f"{input_image.stem}_{LST_BAND_NAME[sensor]}.TIF"
+    proj, gt, *_ = sl.gu.getRasterInfo(str(raster))
     lst = sl.raster_data(str(raster)).astype(float)
     lst[valid] = add + mult * lst[valid]
     lst[~valid] = np.nan
     # Save temporary LST file in K
     temp_file = input_image / f"{input_image.stem}_ST.TIF"
     sl.gu.saveImg(lst, gt, proj, str(temp_file), noDataValue=np.nan)
-    cv, *_ = sl.local_variability(temp_file, proj, extent,
+    cv, *_ = sl.local_variability(temp_file, proj_ref, extent_ref,
                                   window_size=window_size)
     # Delete temporary LST file in K
     temp_file.unlink()
