@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Nieto"
+  given-names: "Hector"
+  orcid: "https://orcid.org/0000-0003-4250-6424"
+
+- family-names: "Pàmies-Sans"
+  given-names: "Magí"
+
+
+title: "dms-bias-correction: Enhancing the dynamic LST range of sharpened LST scenes, by fusing them with Landsat LST imagery"
+version: 1.0
+doi: 10.5281/zenodo.11279233
+date-released: 2024-05-24
+url: "https://github.com/hectornieto/dms-bias-correction"
+
