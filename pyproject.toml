@@ -1,0 +1,50 @@
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dms_bias_correction"
+version = "1.0.1"
+description = "Bias correction of sharpened LST based on observed actual LST spatial variability"
+authors = [
+    { name = "Héctor Nieto", email = "hector.nieto@csic.es" },
+    { name = "Radoslaw Guzinski", email = "rmgu@dhigroup.com"},
+]
+
+keywords = ['SEN-ET',
+            'Evapotranspiration',
+            "Landsat",
+            'Sentinel-3',
+            'SLSTR',
+            "Copernicus",
+            'Remote Sensing']
+
+classifiers  = [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Science/Research",
+        "Topic :: Scientific/Engineering :: Hydrology",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3"]
+        
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+        "numpy",
+        "scipy",
+        "scikit-image",
+        "gdal",
+        "python-dms",
+        "model_evaluation@git+https://github.com/hectornieto/model_evaluation"
+               ]
+
+[project.urls]
+Homepage = "https://github.com/hectornieto/dms-bias-correction"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["dms_bias_correction"]
+

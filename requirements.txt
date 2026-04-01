@@ -1,6 +1,0 @@
-numpy
-scipy
-acikit-image
-gdal
-git+https://github.com/radosuav/pyDMS
-git+https://github.com/hectornieto/model_evaluation
